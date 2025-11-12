@@ -1,0 +1,25 @@
+<div class="mt-8 p-6 bg-white rounded-lg shadow-lg" id="checkout-form-container">
+    <h2 class="text-2xl font-bold text-amber-700 mb-6 flex items-center">
+        <i data-lucide="wallet" class="inline-block h-6 w-6 mr-2"></i> M-Pesa Checkout
+    </h2>
+    <form id="mpesaCheckoutForm">
+        <div class="mb-4">
+            <label for="mpesaPhone" class="block text-sm font-medium text-gray-700 mb-1">M-Pesa Phone Number (e.g., 07XXXXXXXX)</label>
+            <input type="tel" id="mpesaPhone" name="mpesaPhone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500" placeholder="07XXXXXXXX" required pattern="07[0-9]{8}|01[0-9]{8}">
+        </div>
+        <div class="mb-6">
+            <label for="accountReference" class="block text-sm font-medium text-gray-700 mb-1">Account Reference (e.g., NIA-ORDER-1001)</label>
+            <input type="text" id="accountReference" name="accountReference" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500" value="NIA-ORDER-${Math.floor(Math.random() * 100000) + 1}" required>
+            <p class="text-xs text-gray-500 mt-1">This is your unique order identifier.</p>
+        </div>
+        
+        <p class="text-xl font-bold text-gray-800 mb-4">Total Amount: <span id="checkoutTotalAmount" class="text-amber-600">KES ${getCartTotal().toLocaleString()}</span></p>
+
+        <button type="submit" id="checkoutButton" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg text-lg transition duration-300 flex items-center justify-center disabled:opacity-50" ${cart.length === 0 ? 'disabled' : ''}>
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/M-Pesa_logo.svg/80px-M-Pesa_logo.svg.png" alt="M-Pesa Logo" class="h-6 w-auto mr-2 inline-block"> Pay Now with M-Pesa
+        </button>
+    </form>
+    <div id="mpesaStatus" class="mt-4 text-center p-3 rounded-lg hidden"></div>
+</div>
+`;
+// ... closing backtick for renderCartPage() ...
