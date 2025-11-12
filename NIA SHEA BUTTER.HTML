@@ -190,770 +190,586 @@
 
 
     <script>
-        // --- Product Data (Simulated Database) ---
-        const products = [
-            {
-                id: 1,
-                name: "Pure Unrefined Shea Butter",
-                description: "Experience the raw, unadulterated goodness of 100% pure, Grade A unrefined shea butter. Sourced ethically, this butter is rich in vitamins A, E, and F, perfect for deep moisturization, soothing dry skin, eczema, and reducing blemishes. Ideal for DIY skincare.",
-                price_kes: 450,
-                image_url: "https://placehold.co/400x400/D1C0A8/4A3B31?text=Pure+Unrefined+Shea+Butter",
-                category: "Raw Shea Butter",
-                sizes: ["100g", "250g", "500g"],
-                stock: 150,
-                rating: 4.8,
-                reviews: 75,
-                ingredients: ["100% Butyrospermum Parkii (Shea Butter)"]
-            },
-            {
-                id: 2,
-                name: "Whipped Body Butter - Vanilla & Lavender",
-                description: "Indulge your skin with our luxurious whipped body butter. A fluffy, light blend of pure shea butter, coconut oil, and jojoba oil, infused with calming lavender and warm vanilla essential oils. Deeply hydrates without a greasy feel, leaving skin soft and fragrant.",
-                price_kes: 1200,
-                image_url: "https://placehold.co/400x400/E6DACC/4A3B31?text=Whipped+Vanilla+Lavender+Butter",
-                category: "Body Butters",
-                sizes: ["150g", "250g"],
-                stock: 80,
-                rating: 4.9,
-                reviews: 120,
-                ingredients: ["Butyrospermum Parkii (Shea Butter)", "Cocos Nucifera (Coconut) Oil", "Simmondsia Chinensis (Jojoba) Seed Oil", "Lavandula Angustifolia (Lavender) Oil", "Vanilla Planifolia Fruit Extract", "Tocopherol (Vitamin E)"]
-            },
-            {
-                id: 3,
-                name: "Shea & Argan Hair Food",
-                description: "Nourish and strengthen your hair with our potent Shea & Argan Hair Food. This rich pomade combines the moisturizing power of shea butter with the repairing properties of argan oil, plus castor oil to promote growth. Perfect for dry, brittle hair, braids, and natural styles.",
-                price_kes: 850,
-                image_url: "https://placehold.co/400x400/C2B2A0/4A3B31?text=Shea+Argan+Hair+Food",
-                category: "Hair Care",
-                sizes: ["100g", "200g"],
-                stock: 100,
-                rating: 4.7,
-                reviews: 90,
-                ingredients: ["Butyrospermum Parkii (Shea Butter)", "Argania Spinosa (Argan) Kernel Oil", "Ricinus Communis (Castor) Seed Oil", "Cera Alba (Beeswax)", "Tocopherol (Vitamin E)"]
-            },
-            {
-                id: 4,
-                name: "Gentle Shea Face Cream - Aloe & Rosehip",
-                description: "Our daily moisturizing face cream combines the gentle touch of shea butter with soothing aloe vera and rejuvenating rosehip oil. Hydrates, calms, and helps improve skin tone and texture. Suitable for normal to dry skin.",
-                price_kes: 1300,
-                image_url: "https://placehold.co/400x400/F0EAE0/4A3B31?text=Shea+Face+Cream+Aloe+Rosehip",
-                category: "Face Care",
-                sizes: ["50g"],
-                stock: 60,
-                rating: 4.8,
-                reviews: 55,
-                ingredients: ["Aqua (Water)", "Butyrospermum Parkii (Shea Butter)", "Aloe Barbadensis Leaf Juice", "Rosa Canina (Rosehip) Seed Oil", "Glycerin", "Cetearyl Alcohol", "Glyceryl Stearate", "Tocopherol (Vitamin E)"]
-            },
-            {
-                id: 5,
-                name: "Exfoliating Sugar Scrub - Coffee & Brown Sugar",
-                description: "Awaken your skin with our invigorating Coffee & Brown Sugar Scrub. Fine brown sugar and ground coffee beans gently exfoliate dead skin cells, while shea butter and sweet almond oil moisturize and leave your skin feeling smooth, soft, and revitalized.",
-                price_kes: 1100,
-                image_url: "https://placehold.co/400x400/A08C79/4A3B31?text=Coffee+Sugar+Scrub",
-                category: "Scrubs",
-                sizes: ["200g"],
-                stock: 70,
-                rating: 4.9,
-                reviews: 85,
-                ingredients: ["Sucrose (Brown Sugar)", "Coffea Arabica (Coffee) Seed Powder", "Butyrospermum Parkii (Shea Butter)", "Prunus Amygdalus Dulcis (Sweet Almond) Oil", "Tocopherol (Vitamin E)"]
-            },
-            {
-                id: 6,
-                name: "Shea Butter Lip Balm - Peppermint",
-                description: "Protect and hydrate your lips with our all-natural shea butter lip balm. Infused with cooling peppermint essential oil for a refreshing tingle. Keeps lips soft, smooth, and moisturized.",
-                price_kes: 350,
-                image_url: "https://placehold.co/400x400/E0F0E0/4A3B31?text=Shea+Lip+Balm+Peppermint",
-                category: "Lip Care",
-                sizes: ["15g"],
-                stock: 200,
-                rating: 4.7,
-                reviews: 150,
-                ingredients: ["Butyrospermum Parkii (Shea Butter)", "Cera Alba (Beeswax)", "Cocos Nucifera (Coconut) Oil", "Mentha Piperita (Peppermint) Oil"]
-            }
-        ];
 
-        // --- Cart Functionality ---
-        let cart = JSON.parse(localStorage.getItem('niaSheaCart')) || [];
+        // --- Product Data (Simulated Database) ---
+        const products = [
+            {
+                id: 1,
+                name: "Pure Unrefined Shea Butter",
+                description: "Experience the raw, unadulterated goodness of 100% pure, Grade A unrefined shea butter. Sourced ethically, this butter is rich in vitamins A, E, and F, perfect for deep moisturization, soothing dry skin, eczema, and reducing blemishes. Ideal for DIY skincare.",
+                price_kes: 450,
+                image_url: "https://placehold.co/400x400/D1C0A8/4A3B31?text=Pure+Unrefined+Shea+Butter",
+                category: "Raw Shea Butter",
+                sizes: ["100g", "250g", "500g"],
+                stock: 150,
+                rating: 4.8,
+                reviews: 75,
+                ingredients: ["100% Butyrospermum Parkii (Shea Butter)"]
+            },
+            {
+                id: 2,
+                name: "Whipped Body Butter - Vanilla & Lavender",
+                description: "Indulge your skin with our luxurious whipped body butter. A fluffy, light blend of pure shea butter, coconut oil, and jojoba oil, infused with calming lavender and warm vanilla essential oils. Deeply hydrates without a greasy feel, leaving skin soft and fragrant.",
+                price_kes: 1200,
+                image_url: "https://placehold.co/400x400/E6DACC/4A3B31?text=Whipped+Vanilla+Lavender+Butter",
+                category: "Body Butters",
+                sizes: ["150g", "250g"],
+                stock: 80,
+                rating: 4.9,
+                reviews: 120,
+                ingredients: ["Butyrospermum Parkii (Shea Butter)", "Cocos Nucifera (Coconut) Oil", "Simmondsia Chinensis (Jojoba) Seed Oil", "Lavandula Angustifolia (Lavender) Oil", "Vanilla Planifolia Fruit Extract", "Tocopherol (Vitamin E)"]
+            },
+            {
+                id: 3,
+                name: "Shea & Argan Hair Food",
+                description: "Nourish and strengthen your hair with our potent Shea & Argan Hair Food. This rich pomade combines the moisturizing power of shea butter with the repairing properties of argan oil, plus castor oil to promote growth. Perfect for dry, brittle hair, braids, and natural styles.",
+                price_kes: 850,
+                image_url: "https://placehold.co/400x400/C2B2A0/4A3B31?text=Shea+Argan+Hair+Food",
+                category: "Hair Care",
+                sizes: ["100g", "200g"],
+                stock: 100,
+                rating: 4.7,
+                reviews: 90,
+                ingredients: ["Butyrospermum Parkii (Shea Butter)", "Argania Spinosa (Argan) Kernel Oil", "Ricinus Communis (Castor) Seed Oil", "Cera Alba (Beeswax)", "Tocopherol (Vitamin E)"]
+            },
+            {
+                id: 4,
+                name: "Gentle Shea Face Cream - Aloe & Rosehip",
+                description: "Our daily moisturizing face cream combines the gentle touch of shea butter with soothing aloe vera and rejuvenating rosehip oil. Hydrates, calms, and helps improve skin tone and texture. Suitable for normal to dry skin.",
+                price_kes: 1300,
+                image_url: "https://placehold.co/400x400/F0EAE0/4A3B31?text=Shea+Face+Cream+Aloe+Rosehip",
+                category: "Face Care",
+                sizes: ["50g"],
+                stock: 60,
+                rating: 4.8,
+                reviews: 55,
+                ingredients: ["Aqua (Water)", "Butyrospermum Parkii (Shea Butter)", "Aloe Barbadensis Leaf Juice", "Rosa Canina (Rosehip) Seed Oil", "Glycerin", "Cetearyl Alcohol", "Glyceryl Stearate", "Tocopherol (Vitamin E)"]
+            },
+            {
+                id: 5,
+                name: "Exfoliating Sugar Scrub - Coffee & Brown Sugar",
+                description: "Awaken your skin with our invigorating Coffee & Brown Sugar Scrub. Fine brown sugar and ground coffee beans gently exfoliate dead skin cells, while shea butter and sweet almond oil moisturize and leave your skin feeling smooth, soft, and revitalized.",
+                price_kes: 1100,
+                image_url: "https://placehold.co/400x400/A08C79/4A3B31?text=Coffee+Sugar+Scrub",
+                category: "Scrubs",
+                sizes: ["200g"],
+                stock: 70,
+                rating: 4.9,
+                reviews: 85,
+                ingredients: ["Sucrose (Brown Sugar)", "Coffea Arabica (Coffee) Seed Powder", "Butyrospermum Parkii (Shea Butter)", "Prunus Amygdalus Dulcis (Sweet Almond) Oil", "Tocopherol (Vitamin E)"]
+            },
+            {
+                id: 6,
+                name: "Shea Butter Lip Balm - Peppermint",
+                description: "Protect and hydrate your lips with our all-natural shea butter lip balm. Infused with cooling peppermint essential oil for a refreshing tingle. Keeps lips soft, smooth, and moisturized.",
+                price_kes: 350,
+                image_url: "https://placehold.co/400x400/E0F0E0/4A3B31?text=Shea+Lip+Balm+Peppermint",
+                category: "Lip Care",
+                sizes: ["15g"],
+                stock: 200,
+                rating: 4.7,
+                reviews: 150,
+                ingredients: ["Butyrospermum Parkii (Shea Butter)", "Cera Alba (Beeswax)", "Cocos Nucifera (Coconut) Oil", "Mentha Piperita (Peppermint) Oil"]
+            }
+        ];
 
-        function addToCart(productId, quantity = 1) {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
+        // --- Cart Functionality ---
+        let cart = JSON.parse(localStorage.getItem('niaSheaCart')) || [];
 
-            const cartItem = cart.find(item => item.id === productId);
-            if (cartItem) {
-                cartItem.quantity += quantity;
-            } else {
-                cart.push({ ...product, quantity });
-            }
-            saveCart();
-            updateCartCount();
-            showToast("Item added to cart!");
-        }
+        function addToCart(productId, quantity = 1) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
 
-        function updateCartQuantity(productId, quantity) {
-            const cartItem = cart.find(item => item.id === productId);
-            if (cartItem) {
-                cartItem.quantity = quantity;
-                if (cartItem.quantity <= 0) {
-                    removeFromCart(productId);
-                } else {
-                    saveCart();
-                }
-            }
-            if (window.location.hash === '#cart') renderCartPage(); // Re-render cart page if currently on it
-        }
+            // NOTE: For simplicity, this code ignores the selected size on the detail page.
+            // A more complex cart implementation would track product ID AND size/variant.
+            const cartItem = cart.find(item => item.id === productId); 
+            
+            if (cartItem) {
+                cartItem.quantity += quantity;
+            } else {
+                cart.push({ ...product, quantity });
+            }
+            saveCart();
+            updateCartCount();
+            showToast("Item added to cart!");
+        }
 
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            saveCart();
-            updateCartCount();
-            if (window.location.hash === '#cart') renderCartPage(); // Re-render cart page if currently on it
-        }
+        function updateCartQuantity(productId, quantity) {
+            const cartItem = cart.find(item => item.id === productId);
+            if (cartItem) {
+                cartItem.quantity = Math.max(0, quantity); // Prevent negative quantity
+                if (cartItem.quantity === 0) {
+                    removeFromCart(productId);
+                } else {
+                    saveCart();
+                }
+            }
+            if (window.location.hash === '#cart') renderCartPage(); // Re-render cart page if currently on it
+        }
 
-        function saveCart() {
-            localStorage.setItem('niaSheaCart', JSON.stringify(cart));
-        }
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCart();
+            updateCartCount();
+            if (window.location.hash === '#cart') renderCartPage(); // Re-render cart page if currently on it
+        }
 
-        function updateCartCount() {
-            const cartCountElement = document.getElementById('cart-count');
-            if (cartCountElement) {
-                cartCountElement.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
-            }
-        }
+        function saveCart() {
+            localStorage.setItem('niaSheaCart', JSON.stringify(cart));
+        }
 
-        function getCartTotal() {
-            return cart.reduce((sum, item) => sum + (item.price_kes * item.quantity), 0);
-        }
+        function updateCartCount() {
+            const cartCountElement = document.getElementById('cart-count');
+            if (cartCountElement) {
+                cartCountElement.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            }
+        }
 
-        // --- Toast Notification ---
-        function showToast(message) {
-            const toastElement = document.getElementById('toast-notification');
-            if (toastElement) {
-                toastElement.textContent = message;
-                toastElement.classList.add('show');
-                setTimeout(() => {
-                    toastElement.classList.remove('show');
-                }, 3000);
-            }
-        }
-        
-        // --- Modal Functionality ---
-        const infoModal = document.getElementById('infoModal');
-        const closeModalButton = document.getElementById('closeModal');
-        const modalTitleElem = document.getElementById('modalTitle');
-        const modalMessageElem = document.getElementById('modalMessage');
-        const modalActionsElem = document.getElementById('modalActions');
+        function getCartTotal() {
+            return cart.reduce((sum, item) => sum + (item.price_kes * item.quantity), 0);
+        }
 
-        function showModal(title, message, actionsHtml = '') {
-            if (modalTitleElem) modalTitleElem.textContent = title;
-            if (modalMessageElem) modalMessageElem.innerHTML = message; // Use innerHTML for potential HTML content
-            if (modalActionsElem) modalActionsElem.innerHTML = actionsHtml;
-            if (infoModal) infoModal.style.display = 'flex';
-        }
+        // --- Toast Notification ---
+        function showToast(message) {
+            const toastElement = document.getElementById('toast-notification');
+            if (toastElement) {
+                toastElement.textContent = message;
+                toastElement.classList.add('show');
+                setTimeout(() => {
+                    toastElement.classList.remove('show');
+                }, 3000);
+            }
+        }
+        
+        // --- Modal Functionality ---
+        const infoModal = document.getElementById('infoModal');
+        const closeModalButton = document.getElementById('closeModal');
+        const modalTitleElem = document.getElementById('modalTitle');
+        const modalMessageElem = document.getElementById('modalMessage');
+        const modalActionsElem = document.getElementById('modalActions');
 
-        if (closeModalButton) {
-            closeModalButton.onclick = () => {
-                if (infoModal) infoModal.style.display = 'none';
-            };
-        }
-        window.onclick = (event) => {
-            if (event.target == infoModal) {
-                infoModal.style.display = "none";
-            }
-        }
+        function showModal(title, message, actionsHtml = '') {
+            if (modalTitleElem) modalTitleElem.textContent = title;
+            if (modalMessageElem) modalMessageElem.innerHTML = message; // Use innerHTML for potential HTML content
+            if (modalActionsElem) modalActionsElem.innerHTML = actionsHtml;
+            if (infoModal) infoModal.style.display = 'flex';
+        }
+
+        if (closeModalButton) {
+            closeModalButton.onclick = () => {
+                if (infoModal) infoModal.style.display = 'none';
+            };
+        }
+        window.onclick = (event) => {
+            if (event.target == infoModal) {
+                infoModal.style.display = "none";
+            }
+        }
 
 
-        // --- Page Rendering Functions ---
-        const mainContent = document.getElementById('main-content');
+        // --- Page Rendering Functions ---
+        const mainContent = document.getElementById('main-content');
 
-        function renderHomePage() {
-            mainContent.innerHTML = `
-                <section class="hero-bg text-white py-20 md:py-32 rounded-lg shadow-xl">
-                    <div class="container mx-auto text-center bg-black bg-opacity-50 p-8 rounded-md">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-6">Discover Nature's Purest Care</h1>
-                        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Experience the nourishing magic of NIA SHEA BUTTER, ethically sourced and crafted for your radiant skin and hair.</p>
-                        <a href="#products" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 router-link">Shop Our Collection</a>
-                    </div>
-                </section>
+        function renderHomePage() {
+            mainContent.innerHTML = `
+                <section class="hero-bg text-white py-20 md:py-32 rounded-lg shadow-xl">
+                    <div class="container mx-auto text-center bg-black bg-opacity-50 p-8 rounded-md">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">Discover Nature's Purest Care</h1>
+                        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Experience the nourishing magic of NIA SHEA BUTTER, ethically sourced and crafted for your radiant skin and hair.</p>
+                        <a href="#products" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 router-link">Shop Our Collection</a>
+                    </div>
+                </section>
 
-                <section class="py-16">
-                    <h2 class="text-3xl font-bold text-center text-amber-700 mb-12">Our Featured Products</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        ${products.slice(0, 3).map(product => `
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden product-card">
-                                <a href="#product/${product.id}" class="router-link">
-                                    <img src="${product.image_url}" alt="${product.name}" class="w-full h-64 object-cover">
-                                </a>
-                                <div class="p-6">
-                                    <h3 class="text-xl font-semibold mb-2 text-amber-800">${product.name}</h3>
-                                    <p class="text-gray-600 text-sm mb-3">${product.description.substring(0,100)}...</p>
-                                    <p class="text-lg font-bold text-amber-600 mb-4">KES ${product.price_kes.toLocaleString()}</p>
-                                    <div class="flex items-center justify-between">
-                                        <a href="#product/${product.id}" class="text-amber-600 hover:text-amber-700 font-medium router-link">View Details</a>
-                                        <button onclick="addToCart(${product.id})" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-lg transition duration-300 text-sm">
-                                            <i data-lucide="shopping-cart" class="inline-block h-4 w-4 mr-1"></i> Add to Cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </section>
+                <section class="py-16">
+                    <h2 class="text-3xl font-bold text-center text-amber-700 mb-12">Our Featured Products</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        ${products.slice(0, 3).map(product => `
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden product-card relative">
+                                    <div class="badge">${product.category}</div>
+                                <a href="#product/${product.id}" class="router-link">
+                                    <img src="${product.image_url}" alt="${product.name}" class="w-full h-64 object-cover">
+                                </a>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2 text-amber-800">${product.name}</h3>
+                                    <p class="text-gray-600 text-sm mb-3">${product.description.substring(0,100)}...</p>
+                                    <p class="text-lg font-bold text-amber-600 mb-4">KES ${product.price_kes.toLocaleString()}</p>
+                                    <div class="flex items-center justify-between">
+                                        <a href="#product/${product.id}" class="text-amber-600 hover:text-amber-700 font-medium router-link">View Details</a>
+                                        <button onclick="addToCart(${product.id})" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-lg transition duration-300 text-sm">
+                                            <i data-lucide="shopping-cart" class="inline-block h-4 w-4 mr-1"></i> Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
 
-                <section class="py-16 bg-white rounded-lg shadow-xl">
-                    <div class="container mx-auto text-center">
-                        <h2 class="text-3xl font-bold text-amber-700 mb-6">The NIA SHEA BUTTER Promise</h2>
-                        <p class="text-gray-700 max-w-3xl mx-auto mb-8 text-lg">
-                            At NIA SHEA BUTTER, we believe in the power of nature. Our shea butter is 100% pure, unrefined, and ethically sourced from women's cooperatives in East Africa. We are committed to providing you with high-quality, natural products that nourish your body and uplift communities.
-                        </p>
-                        <a href="#about" class="bg-amber-700 hover:bg-amber-800 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 router-link">Learn More About Us</a>
-                    </div>
-                </section>
-                
-                <section class="py-16">
-                    <h2 class="text-3xl font-bold text-center text-amber-700 mb-12">What Our Customers Say</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <p class="text-gray-600 mb-4">"The Pure Unrefined Shea Butter is a lifesaver for my dry skin! So rich and moisturizing. NIA is my go-to!"</p>
-                            <p class="font-semibold text-amber-700">- Aisha K.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <p class="text-gray-600 mb-4">"I love the Whipped Body Butter! Smells amazing and leaves my skin feeling so soft. Highly recommend."</p>
-                            <p class="font-semibold text-amber-700">- David M.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <p class="text-gray-600 mb-4">"The Shea & Argan Hair Food has done wonders for my natural hair. It's healthier and growing!"</p>
-                            <p class="font-semibold text-amber-700">- Fatuma S.</p>
-                        </div>
-                    </div>
-                </section>
-            `;
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-        }
+                <section class="py-16 bg-white rounded-lg shadow-xl">
+                    <div class="container mx-auto text-center">
+                        <h2 class="text-3xl font-bold text-amber-700 mb-6">The NIA SHEA BUTTER Promise</h2>
+                        <p class="text-gray-700 max-w-3xl mx-auto mb-8 text-lg">
+                            At NIA SHEA BUTTER, we believe in the power of nature. Our shea butter is 100% pure, unrefined, and ethically sourced from women's cooperatives in East Africa. We are committed to providing you with high-quality, natural products that nourish your body and uplift communities.
+                        </p>
+                        <a href="#about" class="bg-amber-700 hover:bg-amber-800 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 router-link">Learn More About Us</a>
+                    </div>
+                </section>
+                
+                <section class="py-16">
+                    <h2 class="text-3xl font-bold text-center text-amber-700 mb-12">What Our Customers Say</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <p class="text-gray-600 mb-4">"The Pure Unrefined Shea Butter is a lifesaver for my dry skin! So rich and moisturizing. NIA is my go-to!"</p>
+                            <p class="font-semibold text-amber-700">- Aisha K.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <p class="text-gray-600 mb-4">"I love the Whipped Body Butter! Smells amazing and leaves my skin feeling so soft. Highly recommend."</p>
+                            <p class="font-semibold text-amber-700">- David M.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <p class="text-gray-600 mb-4">"The Shea & Argan Hair Food has done wonders for my natural hair. It's healthier and growing!"</p>
+                            <p class="font-semibold text-amber-700">- Fatuma S.</p>
+                        </div>
+                    </div>
+                </section>
+            `;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
 
-        function renderProductsPage() {
-            mainContent.innerHTML = `
-                <section class="py-8">
-                    <h1 class="text-4xl font-bold text-center text-amber-700 mb-12">Our Products</h1>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                        ${products.map(product => `
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden product-card">
-                                <a href="#product/${product.id}" class="router-link block">
-                                    <img src="${product.image_url}" alt="${product.name}" class="w-full h-64 object-cover">
-                                </a>
-                                <div class="p-6">
-                                    <h3 class="text-xl font-semibold mb-2 text-amber-800">${product.name}</h3>
-                                    <p class="text-gray-600 text-sm mb-1">Category: ${product.category}</p>
-                                    <div class="flex items-center mb-2">
-                                        <span class="text-yellow-500">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}</span>
-                                        <span class="ml-2 text-sm text-gray-500">(${product.reviews} reviews)</span>
-                                    </div>
-                                    <p class="text-lg font-bold text-amber-600 mb-4">KES ${product.price_kes.toLocaleString()}</p>
-                                    <div class="flex items-center justify-between">
-                                        <a href="#product/${product.id}" class="text-amber-600 hover:text-amber-700 font-medium router-link text-sm">View Details</a>
-                                        <button onclick="addToCart(${product.id})" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-lg transition duration-300 text-sm">
-                                            <i data-lucide="shopping-cart" class="inline-block h-4 w-4 mr-1"></i> Add to Cart
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </section>
-            `;
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-        }
+        function renderProductsPage() {
+            mainContent.innerHTML = `
+                <section class="py-8">
+                    <h1 class="text-4xl font-bold text-center text-amber-700 mb-12">Our Products</h1>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                        ${products.map(product => `
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden product-card relative">
+                                    <div class="badge">${product.category}</div>
+                                <a href="#product/${product.id}" class="router-link block">
+                                    <img src="${product.image_url}" alt="${product.name}" class="w-full h-64 object-cover">
+                                </a>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2 text-amber-800">${product.name}</h3>
+                                    <p class="text-gray-600 text-sm mb-1">Category: ${product.category}</p>
+                                    <div class="flex items-center mb-2">
+                                        <span class="text-yellow-500">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}</span>
+                                        <span class="ml-2 text-sm text-gray-500">(${product.reviews} reviews)</span>
+                                    </div>
+                                    <p class="text-lg font-bold text-amber-600 mb-4">KES ${product.price_kes.toLocaleString()}</p>
+                                    <div class="flex items-center justify-between">
+                                        <a href="#product/${product.id}" class="text-amber-600 hover:text-amber-700 font-medium router-link text-sm">View Details</a>
+                                        <button onclick="addToCart(${product.id})" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-lg transition duration-300 text-sm">
+                                            <i data-lucide="shopping-cart" class="inline-block h-4 w-4 mr-1"></i> Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+            `;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
 
-        function renderProductDetailPage(productId) {
-            const product = products.find(p => p.id === parseInt(productId));
-            if (!product) {
-                mainContent.innerHTML = `<p class="text-center text-red-500 text-xl py-10">Product not found.</p>`;
-                return;
-            }
+        function renderProductDetailPage(productId) {
+            const product = products.find(p => p.id === parseInt(productId));
+            if (!product) {
+                mainContent.innerHTML = `<p class="text-center text-red-500 text-xl py-10">Product not found.</p>`;
+                return;
+            }
 
-            mainContent.innerHTML = `
-                <section class="py-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                        <div class="bg-white p-4 rounded-lg shadow-lg">
-                            <img src="${product.image_url}" alt="${product.name}" class="w-full h-auto max-h-[500px] object-contain rounded-lg">
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <h1 class="text-3xl md:text-4xl font-bold text-amber-700 mb-4">${product.name}</h1>
-                            <p class="text-gray-500 text-sm mb-2">Category: ${product.category}</p>
-                            <div class="flex items-center mb-4">
-                                <span class="text-yellow-500 text-xl">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}</span>
-                                <span class="ml-2 text-gray-600">(${product.reviews} reviews)</span>
-                            </div>
-                            <p class="text-2xl font-bold text-amber-600 mb-6">KES ${product.price_kes.toLocaleString()}</p>
-                            
-                            <div class="mb-6">
-                                <label for="size-select" class="block text-sm font-medium text-gray-700 mb-1">Select Size:</label>
-                                <select id="size-select" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
-                                    ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
-                                </select>
-                            </div>
+            mainContent.innerHTML = `
+                <section class="py-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                        <div class="bg-white p-4 rounded-lg shadow-lg">
+                            <img src="${product.image_url}" alt="${product.name}" class="w-full h-auto max-h-[500px] object-contain rounded-lg">
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <h1 class="text-3xl md:text-4xl font-bold text-amber-700 mb-4">${product.name}</h1>
+                            <p class="text-gray-500 text-sm mb-2">Category: ${product.category}</p>
+                            <div class="flex items-center mb-4">
+                                <span class="text-yellow-500 text-xl">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}</span>
+                                <span class="ml-2 text-gray-600">(${product.reviews} reviews)</span>
+                            </div>
+                            <p class="text-2xl font-bold text-amber-600 mb-6">KES ${product.price_kes.toLocaleString()}</p>
+                            
+                            <div class="mb-6">
+                                <label for="size-select" class="block text-sm font-medium text-gray-700 mb-1">Select Size:</label>
+                                <select id="size-select" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
+                                    ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+                                </select>
+                            </div>
 
-                            <div class="mb-6">
-                                <label for="quantity-select" class="block text-sm font-medium text-gray-700 mb-1">Quantity:</label>
-                                <input type="number" id="quantity-select" value="1" min="1" max="${product.stock}" class="w-24 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
-                                <span class="ml-2 text-sm text-gray-500">${product.stock} in stock</span>
-                            </div>
-                            
-                            <button onclick="handleAddToCartFromDetail(${product.id})" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg text-lg transition duration-300 mb-4">
-                                <i data-lucide="shopping-cart" class="inline-block h-5 w-5 mr-2"></i> Add to Cart
-                            </button>
-                            
-                            <h3 class="text-xl font-semibold text-amber-800 mt-8 mb-2">Product Description</h3>
-                            <p class="text-gray-700 leading-relaxed mb-4">${product.description}</p>
-                            
-                            <h3 class="text-xl font-semibold text-amber-800 mt-6 mb-2">Ingredients</h3>
-                            <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
-                                ${product.ingredients.map(ing => `<li>${ing}</li>`).join('')}
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-12 bg-white p-6 rounded-lg shadow-lg">
-                        <h2 class="text-2xl font-bold text-amber-700 mb-6">Customer Reviews</h2>
-                        <div class="space-y-4">
-                            <div class="border-b pb-4">
-                                <div class="flex items-center mb-1">
-                                    <span class="font-semibold">Amina J.</span>
-                                    <span class="ml-auto text-yellow-500">${'★'.repeat(5)}</span>
-                                </div>
-                                <p class="text-gray-600 text-sm">Absolutely love this product! It's made such a difference to my skin. Highly recommend NIA Shea Butter.</p>
-                            </div>
-                            <div class="border-b pb-4">
-                                <div class="flex items-center mb-1">
-                                    <span class="font-semibold">Brian O.</span>
-                                    <span class="ml-auto text-yellow-500">${'★'.repeat(4)}☆</span>
-                                </div>
-                                <p class="text-gray-600 text-sm">Great quality shea butter. The vanilla lavender scent is divine. My skin feels so soft.</p>
-                            </div>
-                            <a href="#" class="text-amber-600 hover:text-amber-700 font-medium">View all reviews</a>
-                        </div>
-                    </div>
-                </section>
-            `;
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-        }
-        
-        function handleAddToCartFromDetail(productId) {
-            const quantityInput = document.getElementById('quantity-select');
-            const quantity = parseInt(quantityInput.value);
-            if (quantity > 0) {
-                addToCart(productId, quantity);
-            }
-        }
+                            <div class="mb-6">
+                                <label for="quantity-select" class="block text-sm font-medium text-gray-700 mb-1">Quantity:</label>
+                                <input type="number" id="quantity-select" value="1" min="1" max="${product.stock}" class="w-24 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
+                                <span class="ml-2 text-sm text-gray-500">${product.stock} in stock</span>
+                            </div>
+                            
+                            <button onclick="handleAddToCartFromDetail(${product.id})" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg text-lg transition duration-300 mb-4">
+                                <i data-lucide="shopping-cart" class="inline-block h-5 w-5 mr-2"></i> Add to Cart
+                            </button>
+                            
+                            <h3 class="text-xl font-semibold text-amber-800 mt-8 mb-2">Product Description</h3>
+                            <p class="text-gray-700 leading-relaxed mb-4">${product.description}</p>
+                            
+                            <h3 class="text-xl font-semibold text-amber-800 mt-6 mb-2">Ingredients</h3>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                                ${product.ingredients.map(ing => `<li>${ing}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 bg-white p-6 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-bold text-amber-700 mb-6">Customer Reviews</h2>
+                        <div class="space-y-4">
+                            <div class="border-b pb-4">
+                                <div class="flex items-center mb-1">
+                                    <span class="font-semibold">Amina J.</span>
+                                    <span class="ml-auto text-yellow-500">${'★'.repeat(5)}</span>
+                                </div>
+                                <p class="text-gray-600 text-sm">Absolutely love this product! It's made such a difference to my skin. Highly recommend NIA Shea Butter.</p>
+                            </div>
+                            <div class="border-b pb-4">
+                                <div class="flex items-center mb-1">
+                                    <span class="font-semibold">Brian O.</span>
+                                    <span class="ml-auto text-yellow-500">${'★'.repeat(4)}☆</span>
+                                </div>
+                                <p class="text-gray-600 text-sm">Great quality shea butter. The vanilla lavender scent is divine. My skin feels so soft.</p>
+                            </div>
+                            <a href="#" class="text-amber-600 hover:text-amber-700 font-medium">View all reviews</a>
+                        </div>
+                    </div>
+                </section>
+            `;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+        
+        function handleAddToCartFromDetail(productId) {
+            const quantityInput = document.getElementById('quantity-select');
+            const quantity = parseInt(quantityInput.value);
+            if (quantity > 0) {
+                addToCart(productId, quantity);
+            }
+        }
 
-        function renderCartPage() {
-            if (cart.length === 0) {
-                mainContent.innerHTML = `
-                    <section class="py-16 text-center">
-                        <h1 class="text-4xl font-bold text-amber-700 mb-6">Your Shopping Cart</h1>
-                        <i data-lucide="shopping-cart" class="mx-auto h-24 w-24 text-gray-400 mb-6"></i>
-                        <p class="text-xl text-gray-600 mb-8">Your cart is currently empty.</p>
-                        <a href="#products" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 router-link">Continue Shopping</a>
-                    </section>
-                `;
-                if (typeof lucide !== 'undefined') lucide.createIcons();
-                return;
-            }
+        function renderCartPage() {
+            if (cart.length === 0) {
+                mainContent.innerHTML = `
+                    <section class="py-16 text-center">
+                        <h1 class="text-4xl font-bold text-amber-700 mb-6">Your Shopping Cart</h1>
+                        <i data-lucide="shopping-cart" class="mx-auto h-24 w-24 text-gray-400 mb-6"></i>
+                        <p class="text-xl text-gray-600 mb-8">Your cart is currently empty.</p>
+                        <a href="#products" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 router-link">Continue Shopping</a>
+                    </section>
+                `;
+            } else {
+                // --- Cart Page Content ---
+                mainContent.innerHTML = `
+                    <section class="py-8">
+                        <h1 class="text-4xl font-bold text-amber-700 mb-8 text-center">Your Shopping Cart</h1>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <div class="lg:col-span-2 space-y-6">
+                                ${cart.map(item => `
+                                    <div class="bg-white p-4 rounded-lg shadow-lg flex items-center space-x-4">
+                                        <img src="${item.image_url}" alt="${item.name}" class="w-20 h-20 object-cover rounded-md">
+                                        <div class="flex-grow">
+                                            <h3 class="text-lg font-semibold text-amber-800">${item.name}</h3>
+                                            <p class="text-gray-600 text-sm">KES ${item.price_kes.toLocaleString()}</p>
+                                        </div>
+                                        <div class="flex items-center space-x-2">
+                                            <button onclick="updateCartQuantity(${item.id}, ${item.quantity - 1})" class="text-gray-600 hover:text-amber-600 p-1 border rounded">-</button>
+                                            <input type="number" min="1" value="${item.quantity}" onchange="updateCartQuantity(${item.id}, parseInt(this.value))" class="w-12 text-center border rounded">
+                                            <button onclick="updateCartQuantity(${item.id}, ${item.quantity + 1})" class="text-gray-600 hover:text-amber-600 p-1 border rounded">+</button>
+                                        </div>
+                                        <p class="font-bold text-amber-600 w-24 text-right">KES ${(item.price_kes * item.quantity).toLocaleString()}</p>
+                                        <button onclick="removeFromCart(${item.id})" class="text-red-500 hover:text-red-700 p-1 rounded">
+                                            <i data-lucide="trash-2" class="h-5 w-5"></i>
+                                        </button>
+                                    </div>
+                                `).join('')}
+                            </div>
 
-            mainContent.innerHTML = `
-                <section class="py-8">
-                    <h1 class="text-3xl font-bold text-amber-700 mb-8">Your Shopping Cart</h1>
-                    <div class="bg-white shadow-lg rounded-lg p-6">
-                        <div class="hidden md:grid md:grid-cols-6 gap-4 font-semibold text-gray-600 border-b pb-4 mb-4">
-                            <div class="col-span-2">Product</div>
-                            <div>Price</div>
-                            <div>Quantity</div>
-                            <div>Total</div>
-                            <div>Action</div>
-                        </div>
-                        ${cart.map(item => `
-                            <div class="grid grid-cols-1 md:grid-cols-6 gap-4 items-center border-b py-4 cart-item-row">
-                                <div class="col-span-2 flex items-center">
-                                    <img src="${item.image_url}" alt="${item.name}" class="w-16 h-16 object-cover rounded-md mr-4">
-                                    <div>
-                                        <h3 class="font-semibold text-amber-800">${item.name}</h3>
-                                        <p class="text-sm text-gray-500">${item.sizes ? item.sizes[0] : ''}</p> </div>
-                                </div>
-                                <div class="text-gray-700 md:text-left text-right">
-                                    <span class="md:hidden font-semibold">Price: </span>KES ${item.price_kes.toLocaleString()}
-                                </div>
-                                <div class="md:text-left text-right">
-                                    <span class="md:hidden font-semibold">Quantity: </span>
-                                    <input type="number" value="${item.quantity}" min="1" onchange="updateCartQuantity(${item.id}, parseInt(this.value))" class="w-16 p-1 border rounded-md text-center">
-                                </div>
-                                <div class="font-semibold text-amber-600 md:text-left text-right">
-                                    <span class="md:hidden font-semibold">Total: </span>KES ${(item.price_kes * item.quantity).toLocaleString()}
-                                </div>
-                                <div class="md:text-left text-right">
-                                    <button onclick="removeFromCart(${item.id})" class="text-red-500 hover:text-red-700">
-                                        <i data-lucide="trash-2" class="inline-block h-5 w-5"></i> <span class="md:hidden">Remove</span>
-                                    </button>
-                                </div>
-                            </div>
-                        `).join('')}
-                        
-                        <div class="mt-8 text-right">
-                            <p class="text-2xl font-bold text-gray-800">Subtotal: <span class="text-amber-700">KES ${getCartTotal().toLocaleString()}</span></p>
-                            <p class="text-sm text-gray-500 mt-1">Shipping & taxes calculated at checkout.</p>
-                            <a href="#checkout" class="mt-6 inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-10 rounded-lg text-lg transition duration-300 router-link">
-                                Proceed to Checkout
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            `;
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-        }
+                            <div class="bg-white p-6 rounded-lg shadow-lg h-fit">
+                                <h2 class="text-2xl font-bold text-amber-700 mb-4">Order Summary</h2>
+                                <div class="space-y-3 border-b pb-4 mb-4">
+                                    <div class="flex justify-between">
+                                        <span>Subtotal:</span>
+                                        <span class="font-medium">KES ${getCartTotal().toLocaleString()}</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm text-gray-500">
+                                        <span>Shipping:</span>
+                                        <span>Calculated at checkout</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between text-xl font-bold text-amber-700 mb-6">
+                                    <span>Estimated Total:</span>
+                                    <span>KES ${getCartTotal().toLocaleString()}</span>
+                                </div>
+                                <button onclick="showCheckoutModal()" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 rounded-lg transition duration-300">Proceed to Checkout</button>
+                            </div>
+                        </div>
+                    </section>
+                `;
+            }
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
 
-        function renderCheckoutPage() {
-             if (cart.length === 0) {
-                mainContent.innerHTML = `
-                    <section class="py-16 text-center">
-                         <h1 class="text-4xl font-bold text-amber-700 mb-6">Checkout</h1>
-                        <p class="text-xl text-gray-600 mb-4">Your cart is empty. Please add products to your cart before proceeding to checkout.</p>
-                        <a href="#products" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 router-link">Shop Products</a>
-                    </section>
-                `;
-                return;
-            }
-            mainContent.innerHTML = `
-                <section class="py-8">
-                    <h1 class="text-3xl font-bold text-amber-700 mb-8 text-center">Checkout</h1>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        <div class="lg:col-span-2 bg-white shadow-lg rounded-lg p-6">
-                            <h2 class="text-2xl font-semibold text-amber-800 mb-6">Shipping & Billing Information</h2>
-                            <form id="checkout-form">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                    <div>
-                                        <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
-                                        <input type="text" id="fullName" name="fullName" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
-                                    </div>
-                                    <div>
-                                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                                        <input type="email" id="email" name="email" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
-                                    </div>
-                                </div>
-                                <div class="mb-6">
-                                    <label for="address" class="block text-sm font-medium text-gray-700">Street Address</label>
-                                    <input type="text" id="address" name="address" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
-                                </div>
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                                    <div>
-                                        <label for="city" class="block text-sm font-medium text-gray-700">City/Town</label>
-                                        <input type="text" id="city" name="city" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
-                                    </div>
-                                    <div>
-                                        <label for="county" class="block text-sm font-medium text-gray-700">County</label>
-                                        <input type="text" id="county" name="county" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
-                                    </div>
-                                    <div>
-                                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number (for M-PESA)</label>
-                                        <input type="tel" id="phone" name="phone" required placeholder="07XX XXX XXX" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
-                                    </div>
-                                </div>
-                                <div class="mb-6">
-                                    <input type="checkbox" id="sameAsShipping" name="sameAsShipping" checked class="h-4 w-4 text-amber-600 border-gray-300 rounded focus:ring-amber-500">
-                                    <label for="sameAsShipping" class="ml-2 text-sm text-gray-700">Billing address is the same as shipping address</label>
-                                </div>
-                                <h3 class="text-xl font-semibold text-amber-800 mb-4 mt-8">Payment Method</h3>
-                                <div class="space-y-4">
-                                    <div>
-                                        <input type="radio" id="mpesa" name="paymentMethod" value="mpesa" checked class="h-4 w-4 text-amber-600 border-gray-300 focus:ring-amber-500">
-                                        <label for="mpesa" class="ml-2 text-sm font-medium text-gray-700">M-PESA (Paybill XXXXX, Account YOURNAME)</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" id="card" name="paymentMethod" value="card" class="h-4 w-4 text-amber-600 border-gray-300 focus:ring-amber-500">
-                                        <label for="card" class="ml-2 text-sm font-medium text-gray-700">Credit/Debit Card (Via Secure Gateway)</label>
-                                    </div>
-                                     <div>
-                                        <input type="radio" id="cod" name="paymentMethod" value="cod" class="h-4 w-4 text-amber-600 border-gray-300 focus:ring-amber-500">
-                                        <label for="cod" class="ml-2 text-sm font-medium text-gray-700">Cash on Delivery (Available in Nairobi only)</label>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+        function renderAboutPage() {
+            mainContent.innerHTML = `
+                <section class="py-16">
+                    <h1 class="text-4xl font-bold text-center text-amber-700 mb-10">Our Story</h1>
+                    <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg space-y-6 text-lg text-gray-700">
+                        <p>NIA SHEA BUTTER was born from a passion for **pure, natural skincare** and a deep respect for the source. We believe that the best ingredients come directly from the earth.</p>
+                        <p>Our shea butter is **ethically and sustainably sourced** from women's cooperatives in East Africa, ensuring fair wages and economic empowerment. This commitment to quality and community is at the heart of everything we do. We bring you unrefined, organic shea butter, rich in vitamins and nutrients, to naturally heal and nourish your skin and hair.</p>
+                        <h2 class="text-2xl font-semibold text-amber-800 mt-8 mb-3">Our Mission</h2>
+                        <p>To provide the highest quality shea butter products that are effective, environmentally conscious, and support the livelihoods of the women who cultivate this 'gold standard' ingredient.</p>
+                    </div>
+                </section>
+            `;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
 
-                        <div class="lg:col-span-1 bg-gray-50 shadow-lg rounded-lg p-6 h-fit sticky top-24">
-                            <h2 class="text-2xl font-semibold text-amber-800 mb-6">Order Summary</h2>
-                            <div id="checkout-cart-summary" class="space-y-3 mb-6 border-b pb-4">
-                                ${cart.map(item => `
-                                    <div class="flex justify-between text-sm">
-                                        <span class="text-gray-600">${item.name} (x${item.quantity})</span>
-                                        <span class="text-gray-800">KES ${(item.price_kes * item.quantity).toLocaleString()}</span>
-                                    </div>
-                                `).join('')}
-                            </div>
-                            <div class="space-y-2 mb-6 border-b pb-4">
-                                <div class="flex justify-between">
-                                    <span class="text-gray-600">Subtotal</span>
-                                    <span class="text-gray-800">KES ${getCartTotal().toLocaleString()}</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-600">Shipping</span>
-                                    <span class="text-gray-800">KES 300</span> </div>
-                                 <div class="flex justify-between">
-                                    <span class="text-gray-600">Taxes</span>
-                                    <span class="text-gray-800">KES 0</span> </div>
-                            </div>
-                            <div class="flex justify-between font-bold text-xl mb-8">
-                                <span class="text-amber-800">Total</span>
-                                <span class="text-amber-700">KES ${(getCartTotal() + 300).toLocaleString()}</span> </div>
-                            <button type="submit" form="checkout-form" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg text-lg transition duration-300">
-                                Place Order (Simulated)
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            `;
-            document.getElementById('checkout-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // Simulate order placement
-                showModal(
-                    "Order Placed Successfully!", 
-                    "Thank you for your order with NIA SHEA BUTTER! Your order number is #NSB" + Math.floor(Math.random()*10000) + ".<br>You will receive a confirmation email shortly. <br><br>(This is a simulation - no actual order was processed or payment taken.)",
-                    `<button onclick="infoModal.style.display='none'; cart=[]; saveCart(); updateCartCount(); navigateTo('#home');" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-lg">OK</button>`
-                );
-                // In a real app, you'd send data to backend, clear cart, etc.
-            });
-        }
-
-        function renderAboutPage() {
-            mainContent.innerHTML = `
-                <section class="py-12 bg-white rounded-lg shadow-xl">
-                    <div class="container mx-auto px-6">
-                        <h1 class="text-4xl font-bold text-center text-amber-700 mb-10">About NIA SHEA BUTTER</h1>
-                        <div class="grid md:grid-cols-2 gap-10 items-center mb-12">
-                            <div>
-                                <img src="https://placehold.co/600x400/E6DACC/4A3B31?text=Ethically+Sourced+Shea+Nuts" alt="Ethically Sourced Shea Nuts" class="rounded-lg shadow-md">
-                            </div>
-                            <div>
-                                <h2 class="text-2xl font-semibold text-amber-800 mb-4">Our Mission</h2>
-                                <p class="text-gray-700 leading-relaxed mb-4">
-                                    At NIA SHEA BUTTER, our mission is to bring you the purest, highest-quality shea butter products that nature has to offer. We are dedicated to promoting natural beauty, wellness, and sustainable practices. We believe that what you put on your body is as important as what you put in it.
-                                </p>
-                                <p class="text-gray-700 leading-relaxed">
-                                    "Nia" means "purpose" in Swahili, and our purpose is to provide products that not only care for your skin and hair but also empower the communities that cultivate and process our precious shea nuts.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-10 items-center">
-                            <div class="order-2 md:order-1">
-                                <h2 class="text-2xl font-semibold text-amber-800 mb-4">Ethical Sourcing & Community</h2>
-                                <p class="text-gray-700 leading-relaxed mb-4">
-                                    We partner directly with women's cooperatives in East Africa, ensuring fair wages and ethical working conditions. By choosing NIA SHEA BUTTER, you are supporting these incredible women, their families, and their communities. Our shea butter is traditionally handcrafted, preserving its natural vitamins and nutrients.
-                                </p>
-                                <p class="text-gray-700 leading-relaxed">
-                                    We are committed to sustainability, from sourcing to packaging. We use eco-friendly materials wherever possible and strive to minimize our environmental footprint.
-                                </p>
-                            </div>
-                             <div class="order-1 md:order-2">
-                                <img src="https://placehold.co/600x400/D1C0A8/4A3B31?text=Women+Cooperative+Processing+Shea" alt="Women Cooperative" class="rounded-lg shadow-md">
-                            </div>
-                        </div>
-                         <div class="text-center mt-12">
-                             <a href="#products" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 router-link">Explore Our Products</a>
-                        </div>
-                    </div>
-                </section>
-            `;
-        }
-
-        function renderContactPage() {
-            mainContent.innerHTML = `
-                <section class="py-12 bg-white rounded-lg shadow-xl">
-                    <div class="container mx-auto px-6">
-                        <h1 class="text-4xl font-bold text-center text-amber-700 mb-10">Contact Us</h1>
-                        <div class="grid md:grid-cols-2 gap-10">
-                            <div>
-                                <h2 class="text-2xl font-semibold text-amber-800 mb-4">Get in Touch</h2>
-                                <p class="text-gray-700 mb-6">We'd love to hear from you! Whether you have a question about our products, an order, or just want to say hello, feel free to reach out.</p>
-                                <div class="space-y-4">
-                                    <p class="flex items-center text-gray-700"><i data-lucide="map-pin" class="mr-3 text-amber-600"></i> Limuru rd, Nairobi, Kenya</p>
-                                    <p class="flex items-center text-gray-700"><i data-lucide="phone" class="mr-3 text-amber-600"></i> +254 796 375 121</p>
-                                    <p class="flex items-center text-gray-700"><i data-lucide="mail" class="mr-3 text-amber-600"></i> info@niasheabutter.co.ke</p>
-                                </div>
-                                <h3 class="text-xl font-semibold text-amber-800 mt-8 mb-4">Business Hours</h3>
-                                <p class="text-gray-700">Monday - Friday: 9:00 AM - 5:00 PM</p>
-                                <p class="text-gray-700">Saturday: 10:00 AM - 2:00 PM</p>
-                                <p class="text-gray-700">Sunday: Closed</p>
-                            </div>
-                            <div>
-                                <form id="contact-form" class="bg-gray-50 p-8 rounded-lg shadow-md">
-                                    <div class="mb-4">
-                                        <label for="contactName" class="block text-sm font-medium text-gray-700">Full Name</label>
-                                        <input type="text" id="contactName" name="contactName" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="contactEmail" class="block text-sm font-medium text-gray-700">Email Address</label>
-                                        <input type="email" id="contactEmail" name="contactEmail" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="contactSubject" class="block text-sm font-medium text-gray-700">Subject</label>
-                                        <input type="text" id="contactSubject" name="contactSubject" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500">
-                                    </div>
-                                    <div class="mb-6">
-                                        <label for="contactMessage" class="block text-sm font-medium text-gray-700">Message</label>
-                                        <textarea id="contactMessage" name="contactMessage" rows="4" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500"></textarea>
-                                    </div>
-                                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg text-lg transition duration-300">Send Message</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            `;
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-            document.getElementById('contact-form').addEventListener('submit', function(e){
+        function renderContactPage() {
+            mainContent.innerHTML = `
+                <section class="py-16">
+                    <h1 class="text-4xl font-bold text-center text-amber-700 mb-10">Get In Touch</h1>
+                    <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h2 class="text-2xl font-semibold text-amber-800 mb-4">Send Us a Message</h2>
+                            <form id="contact-form" class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                    <input type="text" id="name" name="name" class="mt-1 w-full p-3 border border-gray-300 rounded-md focus:ring-amber-500 focus:border-amber-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                    <input type="email" id="email" name="email" required class="mt-1 w-full p-3 border border-gray-300 rounded-md focus:ring-amber-500 focus:border-amber-500">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                    <textarea id="message" name="message" rows="4" required class="mt-1 w-full p-3 border border-gray-300 rounded-md focus:ring-amber-500 focus:border-amber-500"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 rounded-lg transition duration-300">Submit Message</button>
+                            </form>
+                        </div>
+                        <div class="space-y-6">
+                            <h2 class="text-2xl font-semibold text-amber-800 mb-4">Contact Details</h2>
+                            <p class="flex items-center space-x-3 text-gray-700"><i data-lucide="mail" class="h-5 w-5 text-amber-600"></i><span>Email: info@niasheabutter.com</span></p>
+                            <p class="flex items-center space-x-3 text-gray-700"><i data-lucide="phone" class="h-5 w-5 text-amber-600"></i><span>Phone: +254 700 000 000</span></p>
+                            <p class="flex items-center space-x-3 text-gray-700"><i data-lucide="map-pin" class="h-5 w-5 text-amber-600"></i><span>Address: Nairobi, Kenya</span></p>
+                        </div>
+                    </div>
+                </section>
+            `;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+            // Simple form submission handler
+            document.getElementById('contact-form')?.addEventListener('submit', function(e) {
                 e.preventDefault();
-                showModal("Message Sent!", "Thank you for contacting us. We will get back to you shortly. (This is a simulation)", `<button onclick="infoModal.style.display='none';" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-lg">OK</button>`);
+                showToast("Thank you! Your message has been sent.");
                 this.reset();
             });
-        }
-        
-        function renderFAQPage() {
-             mainContent.innerHTML = `
-                <section class="py-12 bg-white rounded-lg shadow-xl">
-                    <div class="container mx-auto px-6">
-                        <h1 class="text-4xl font-bold text-center text-amber-700 mb-10">Frequently Asked Questions</h1>
-                        <div class="space-y-6 max-w-3xl mx-auto">
-                            <details class="bg-gray-50 p-4 rounded-lg shadow">
-                                <summary class="font-semibold text-amber-800 cursor-pointer">What is Shea Butter?</summary>
-                                <p class="text-gray-700 mt-2 leading-relaxed">Shea butter is a fat extracted from the nuts of the African shea tree. It is rich in vitamins and fatty acids, making it incredibly moisturizing and nourishing for skin and hair.</p>
-                            </details>
-                            <details class="bg-gray-50 p-4 rounded-lg shadow">
-                                <summary class="font-semibold text-amber-800 cursor-pointer">Is your Shea Butter unrefined?</summary>
-                                <p class="text-gray-700 mt-2 leading-relaxed">Yes, our Pure Unrefined Shea Butter is 100% raw and unrefined (Grade A), meaning it retains all its natural nutrients and healing properties. We also offer some products that use refined shea butter for specific textures, clearly indicated in the ingredients.</p>
-                            </details>
-                            <details class="bg-gray-50 p-4 rounded-lg shadow">
-                                <summary class="font-semibold text-amber-800 cursor-pointer">Where do you source your Shea Butter from?</summary>
-                                <p class="text-gray-700 mt-2 leading-relaxed">Our shea butter is ethically sourced from women's cooperatives in East Africa, primarily from regions in Kenya and Uganda known for high-quality Nilotica shea butter.</p>
-                            </details>
-                             <details class="bg-gray-50 p-4 rounded-lg shadow">
-                                <summary class="font-semibold text-amber-800 cursor-pointer">What are the shipping options and costs?</summary>
-                                <p class="text-gray-700 mt-2 leading-relaxed">We offer delivery across Kenya. Shipping within Nairobi is typically KES 300. For areas outside Nairobi, shipping costs vary based on location and package weight, calculated at checkout. We aim to deliver within 1-3 business days for Nairobi and 2-5 business days for other regions.</p>
-                            </details>
-                             <details class="bg-gray-50 p-4 rounded-lg shadow">
-                                <summary class="font-semibold text-amber-800 cursor-pointer">What is your return policy?</summary>
-                                <p class="text-gray-700 mt-2 leading-relaxed">We accept returns for unopened and unused products within 7 days of delivery if there is an issue with the product. Please contact our customer service for assistance with returns.</p>
-                            </details>
-                        </div>
-                    </div>
-                </section>
-            `;
-        }
-        
+        }
+
         function renderPrivacyPage() {
+            // Placeholder content for Privacy Policy
             mainContent.innerHTML = `
-                <section class="py-12 bg-white rounded-lg shadow-xl">
-                    <div class="container mx-auto px-6 max-w-3xl">
-                        <h1 class="text-4xl font-bold text-center text-amber-700 mb-10">Privacy Policy</h1>
-                        <p class="text-gray-700 mb-4 leading-relaxed"><strong>Last Updated: <span id="privacyDate"></span></strong></p>
-                        <p class="text-gray-700 mb-4 leading-relaxed">NIA SHEA BUTTER operates the website. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
-                        
+                <section class="py-16">
+                    <h1 class="text-4xl font-bold text-center text-amber-700 mb-10">Privacy Policy</h1>
+                    <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg space-y-4 text-gray-700">
+                        <p class="text-gray-700 mb-4 leading-relaxed"><strong>Last Updated: November 12, 2025</strong></p>
+                        <p>NIA SHEA BUTTER ("us", "we", or "our") operates this website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data.</p>
                         <h2 class="text-2xl font-semibold text-amber-800 mt-6 mb-3">Information Collection and Use</h2>
-                        <p class="text-gray-700 mb-4 leading-relaxed">We collect several different types of information for various purposes to provide and improve our Service to you. This may include names, email addresses, shipping addresses, and phone numbers for order processing.</p>
-
-                        <h2 class="text-2xl font-semibold text-amber-800 mt-6 mb-3">Use of Data</h2>
-                        <p class="text-gray-700 mb-4 leading-relaxed">NIA SHEA BUTTER uses the collected data for various purposes: to provide and maintain the Service, to notify you about changes to our Service, to allow you to participate in interactive features of our Service when you choose to do so, to provide customer care and support, to provide analysis or valuable information so that we can improve the Service, to monitor the usage of the Service, and to detect, prevent and address technical issues.</p>
-
+                        <p>We collect several different types of information for various purposes to provide and improve our Service to you. This may include names, email addresses, and shipping details when you place an order.</p>
+                        <h2 class="text-2xl font-semibold text-amber-800 mt-6 mb-3">Cookies</h2>
+                        <p>We use cookies to track the activity on our Service and hold certain information. You can instruct your browser to refuse all cookies.</p>
                         <h2 class="text-2xl font-semibold text-amber-800 mt-6 mb-3">Data Security</h2>
-                        <p class="text-gray-700 mb-4 leading-relaxed">The security of your data is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
-                        
-                        <p class="text-gray-700 mt-8 leading-relaxed"><em></p>
+                        <p>The security of your data is important to us. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
                     </div>
                 </section>
             `;
-            document.getElementById('privacyDate').textContent = new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+            if (typeof lucide !== 'undefined') lucide.createIcons();
         }
 
-
-        // --- Router Functionality ---
-        function router() {
-            const path = window.location.hash.substring(1); // Remove #
-            const [page, param] = path.split('/');
-
-            // Scroll to top on page change
-            window.scrollTo(0, 0);
-
-            // Close mobile menu if open
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-            }
-
-            switch (page) {
-                case 'products':
-                    renderProductsPage();
-                    break;
-                case 'product':
-                    renderProductDetailPage(param);
-                    break;
-                case 'cart':
-                    renderCartPage();
-                    break;
-                case 'checkout':
-                    renderCheckoutPage();
-                    break;
-                case 'about':
-                    renderAboutPage();
-                    break;
-                case 'contact':
-                    renderContactPage();
-                    break;
-                case 'faq':
-                    renderFAQPage();
-                    break;
-                case 'privacy':
-                    renderPrivacyPage();
-                    break;
-                case 'home':
-                default:
-                    renderHomePage();
-                    break;
-            }
-        }
-        
-        // Helper for programmatic navigation
-        function navigateTo(path) {
-            window.location.hash = path;
+        // Simple placeholder for checkout
+        function showCheckoutModal() {
+            showModal(
+                "Proceed to Checkout",
+                `Your total order value is **KES ${getCartTotal().toLocaleString()}**. <br><br> In a real application, you would be redirected to a payment processor (e.g., M-Pesa, Stripe).`,
+                `<button onclick="document.getElementById('infoModal').style.display='none';" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg">Close</button>`
+            );
         }
 
+        // --- Router Logic ---
+        function router() {
+            const hash = window.location.hash || '#home';
+            const route = hash.split('/')[0];
+            const productId = hash.split('/')[1];
 
-        // --- Event Listeners ---
-        window.addEventListener('hashchange', router);
-        window.addEventListener('load', () => {
-            router(); // Initial page load
-            updateCartCount();
-            if (typeof lucide !== 'undefined') { // Ensure lucide is defined before calling
-                 lucide.createIcons(); // Initial icon rendering
-            }
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            // Hide mobile menu on route change
+            document.getElementById('mobile-menu').classList.add('hidden');
 
-            // Mobile menu toggle
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if(menuButton && mobileMenu){
-                menuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
+            switch (route) {
+                case '#home':
+                    renderHomePage();
+                    break;
+                case '#products':
+                    renderProductsPage();
+                    break;
+                case '#product':
+                    renderProductDetailPage(productId);
+                    break;
+                case '#cart':
+                    renderCartPage();
+                    break;
+                case '#about':
+                    renderAboutPage();
+                    break;
+                case '#contact':
+                    renderContactPage();
+                    break;
+                case '#privacy':
+                    renderPrivacyPage();
+                    break;
+                default:
+                    renderHomePage(); // Fallback
+                    break;
+            }
+        }
 
-            // Add click listeners to all router-links to close mobile menu
-            document.querySelectorAll('.router-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                         mobileMenu.classList.add('hidden');
+        // --- Event Listeners and Initial Load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Initial Icon Load (for header/footer)
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+
+            // 2. Dynamic Year in Footer
+            const currentYearElement = document.getElementById('currentYear');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+
+            // 3. Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton?.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // 4. Router Initialization
+            window.addEventListener('hashchange', router);
+            document.body.addEventListener('click', (e) => {
+                // Handle smooth scrolling and routing for all .router-link elements
+                if (e.target.closest('.router-link')) {
+                    const href = e.target.closest('.router-link').getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        window.location.hash = href;
                     }
-                });
+                }
             });
-        });
-
-    </script>
+            router();
+            updateCartCount();
+        });
+    </script>
 </body>
 </html>
+```
