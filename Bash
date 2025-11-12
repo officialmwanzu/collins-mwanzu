@@ -1,0 +1,4 @@
+mkdir mpesa-backend
+cd mpesa-backend
+npm init -y
+npm install express axios dotenv moment
